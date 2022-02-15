@@ -4,6 +4,7 @@ import ContentWrapper from './ContentWrapper';
 import GenresInDb from './GenresInDb';
 import LastMovieInDb from './LastMovieInDb';
 import ContentRowMovies from './ContentRowMovies';
+import SearchMovies from './SearchMovies';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
 
@@ -27,7 +28,8 @@ function SideBar(){
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span></Link>
+                        <span>Dashboard - DH movies</span>
+                    </Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -38,7 +40,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                <Link className="nav-link" to="/GenresInDb">
+                    <Link className="nav-link" to="/GenresInDb">
                         <i className="fas fa-fw fa-folder"></i>
                         <span>Pages</span>
                     </Link>
@@ -48,14 +50,24 @@ function SideBar(){
                 <li className="nav-item">
                     <Link className="nav-link" to="/LastMovieInDb">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></Link>
+                        <span>Charts</span>
+                    </Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowMovies">
+                <li className="nav-item">
+                    <Link className="nav-link" to="/ContentRowMovies">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
+                        <span>Tables</span>
+                    </Link>
+                </li>
+
+                {/*<!-- Nav Item - Search -->*/}
+                <li className="nav-item">
+                    <Link className="nav-link" to="/SearchMovies">
+                        <i className="fas fa-fw fa-search"></i>
+                        <span>Search</span>
+                    </Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -91,6 +103,9 @@ function SideBar(){
                 </Route>
                 <Route path="/ContentRowMovies">
                     <ContentRowMovies />
+                </Route>
+                <Route path="/SearchMovies">
+                    <SearchMovies />
                 </Route>
                 <Route component={NotFound} />
             </Switch>
